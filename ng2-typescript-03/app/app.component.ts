@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core';
+import {FavoriteComponent} from "./favorite.component";
 
 @Component({
     selector: 'my-app',
@@ -19,10 +20,9 @@ import {Component} from 'angular2/core';
       <input type="text" [(ngModel)]="title"/>
       <input type="button" (click)="title=''" value="Clear"/>
       
-      <br>Exercice :<br>
-      
-      
-    `
+      <favorite></favorite>
+    `,
+    directives : [FavoriteComponent]
 })
 export class AppComponent {
     title = "Angular App";
