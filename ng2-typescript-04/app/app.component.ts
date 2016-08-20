@@ -6,6 +6,7 @@ import {FavoriteComponent} from "./favorite.component";
     template: `
         <h1>Ng Typescript 04</h1>
         <favorite [is-favorite]="post.isFavorite" (change)="onFavoriteChange($event)"></favorite>
+        <i class="glyphicon glyphicon-star"></i>
         `,
     directives : [FavoriteComponent]
 })
