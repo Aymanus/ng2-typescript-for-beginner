@@ -1,6 +1,7 @@
 import {Component, OnInit} from 'angular2/core';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {PhotoService} from './photo.service';
+import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
     template: `
@@ -10,11 +11,14 @@ import {PhotoService} from './photo.service';
         </div>
         <ul>
             <li *ngFor="#album of albums">
-                {{ album.title }}
+                <a [routerLink] = "['Album', {id : album.id} ]">
+                    {{ album.title }}
+                </a>
             </li> 
         </ul>
     `,
-    providers: [PhotoService, HTTP_PROVIDERS]
+    providers: [PhotoService, HTTP_PROVIDERS],
+    directives: [ROUTER_DIRECTIVES]
 })
 export class AlbumsComponent implements OnInit {
     isLoading = true;
